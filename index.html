@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+        <title>Big D Landscapers</title> 
+
+        <link rel="stylesheet" href="" type="text/css">
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        
+</head>
+
+<body>
+
+        Budget $<input type='text' id='budget'><br><br>
+        
+        Front yard:<br> 
+        <select id='yard_size'>
+                <option value='1'>Small (Less than .25 acres)</option>
+                <option value='2'>Medium (Between .25 and .5 acres)</option>
+                <option value='3'>Large (More than .5 acres)</option>
+        </select>
+
+        <br><br>
+        Lawn care:<br>
+        <input type='checkbox' name='services' value='15'>Grass mowed<br>
+        <input type='checkbox' name='services' value='30'>Tree trimming<br>
+        <input type='checkbox' name='services' value='100'>Seasonal floral plantings<br>
+        <input type='checkbox' name='services' value='50'>Seasonal weed removal<br>
+
+        <br><br>
+        New installation:<br>
+        <input type='checkbox' name='services' value='100'>Regional evergreen plants<br>
+        <input type='checkbox' name='services' value='250'>Indigenous sapling tree<br>
+        <input type='checkbox' name='services' value='500'>Pavestone pathway<br>
+        <input type='checkbox' name='services' value='350'>Raised planting bed<br>
+
+        <br><br>
+                
+        <button>Recalculate</button>
+        
+        Total: $<span id='output'></span>
+
+        <script>  
+        
+                /*-------------------------------------------------------------------------------------------------
+                Listeners
+                -------------------------------------------------------------------------------------------------*/
+                $('button').click(calculate);
+                $('input,select').change(calculate);
+                
+                
+                /*-------------------------------------------------------------------------------------------------
+                
+                -------------------------------------------------------------------------------------------------*/
+                function calculate() {
+                        
+                        var budget    = $('#budget').val();
+                        var size = $('#yard_size').val();
+                        var services  = $('input[name=services]:checked');
+                        var total     = 0;
+                        
+                        services.each(function() {
+                                
+                                var price = $(this).val();
+                                
+                                var amount = price * size;
+                                
+                                total = total + amount;
+                                
+                        }); // end of loop
+                        
+                        $('#output').html(total);
+                        
+                }
+                
+        
+        </script>        
+
+</body>  
+</html>
