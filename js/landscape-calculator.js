@@ -3,8 +3,10 @@ Listeners
 -------------------------------------------------------------------------------------------------*/
 $('button').click(front_calculate);
 $('input,select').change(front_calculate);
+
 $('button').click(back_calculate);
 $('input,select').change(back_calculate);
+
 $('button').click(total_calculate);
 $('input,select').change(total_calculate);     
 
@@ -57,12 +59,13 @@ function back_calculate() {
 /*-------------------------------------------------------------------------------------------------
 BROKEN: need to successfully add front_output and back_output together:
 -------------------------------------------------------------------------------------------------*/
+
 function total_calculate() {
 
     var front_output     = $('#front_output').val();
     var back_output      = $('#back_output').val();
 
-    total_output = front_output + back_output;
+    var total_output = front_output + back_output;
 
     $('#total_output').html(total_output);
     
