@@ -62,10 +62,10 @@ BROKEN: need to successfully add front_output and back_output together:
 
 function total_calculate() {
 
-    var front_output     = $('#front_output').val();
-    var back_output      = $('#back_output').val();
+    var front_output     = $("#front_output").val();
+    var back_output      = $("#back_output").val();
 
-    var total_output = front_output + back_output;
+     total_output = parseInt(front_output) + parseInt(back_output);
 
     $('#total_output').html(total_output);
     
