@@ -1,65 +1,37 @@
 /*-------------------------------------------------------------------------------------------------
 Listeners
 -------------------------------------------------------------------------------------------------*/
-$('button').click(front_calculate);
-$('input,select').change(front_calculate);
-
-$('button').click(back_calculate);
-$('input,select').change(back_calculate);
-
-$('button').click(total_calculate);
-$('input,select').change(total_calculate);     
+$('button').click(calculate);
+$('input,select').change(calculate);
 
 /*-------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------*/
-function front_calculate() {
+function calculate() {
     
-    var front_size          = $('#front_size').val();
-    var front_services      = $('input[name=front_services]:checked');
-    var front_total         = 0;
+    var budget      = $('#budget').val();
+    var size          = $('#size').val();
+    var services      = $('input[name=services]:checked');
+    var total         = 0;
 
     
-    front_services.each(function() {
+    services.each(function() {
             
             var price = $(this).val();
             
-            var amount = price * front_size;
+            var amount = price * size;
             
-            front_total = front_total + amount;
+            total = total + amount;
             
     });
     
-    $('#front_output').html(front_total);
+    $('#total_output').html(total);
     
+    $('#remaining_budget').html(budget - total);
+
 }
+
 /*-------------------------------------------------------------------------------------------------
-
--------------------------------------------------------------------------------------------------*/
-function back_calculate() {
-    
-    var back_size           = $('#back_size').val();
-    var back_services       = $('input[name=back_services]:checked');
-    var back_total          = 0;
-
-    
-    back_services.each(function() {
-            
-            var price = $(this).val();
-            
-            var amount = price * back_size;
-            
-            back_total = back_total + amount;
-            
-    });
-    
-    $('#back_output').html(back_total);
-    
-}        
-/*-------------------------------------------------------------------------------------------------
-BROKEN: need to successfully add front_output and back_output together:
--------------------------------------------------------------------------------------------------*/
-
 function total_calculate() {
 
     var front_output     = $("#front_output").val();

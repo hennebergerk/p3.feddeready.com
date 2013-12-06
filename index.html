@@ -14,59 +14,68 @@
 
 <body>
 
-<!--        Budget $<input type='text' id='budget'><br><br>
- -->       
-        Front yard:<br> 
-        <select id='front_size'>
-                <option value='1'>Small (Less than .25 acres)</option>
-                <option value='2'>Medium (Between .25 and .5 acres)</option>
-                <option value='3'>Large (More than .5 acres)</option>
+        Budget $<input type='text' id='budget'><br><br>
+
+        Total yard size:<br> 
+        <select id='size'>
+                <option value='1'>Small (Less than .5 acres)</option>
+                <option value='2'>Medium (Between .5 and 1 acre)</option>
+                <option value='3'>Large (More than 1 acre)</option>
         </select>
 
-        <br><br>
+<style type="text/css">
+.tftable {font-size:16px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+.tftable th {font-size:16px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+.tftable tr {background-color:#d4e3e5;}
+.tftable td {font-size:16px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+</style>
+
+
+<table class="tftable" border="1">
+<tr><th>Front yard:</th><th>Back yard:</th></tr>
+<tr><td>
+
         Lawn care:<br>
-        <input type='checkbox' name='front_services' value='15'>Grass mowed<br>
-        <input type='checkbox' name='front_services' value='30'>Tree trimming<br>
-        <input type='checkbox' name='front_services' value='100'>Seasonal floral plantings<br>
-        <input type='checkbox' name='front_services' value='50'>Seasonal weed removal<br>
+        <input type='checkbox' name='services' value='15'>Grass mowed<br>
+        <input type='checkbox' name='services' value='30'>Tree trimming<br>
+        <input type='checkbox' name='services' value='100'>Seasonal floral plantings<br>
+        <input type='checkbox' name='services' value='50'>Seasonal weed removal<br>
 
         <br>
         New installation:<br>
-        <input type='checkbox' name='front_services' value='100'>Regional evergreen plants<br>
-        <input type='checkbox' name='front_services' value='250'>Indigenous sapling tree<br>
-        <input type='checkbox' name='front_services' value='500'>Pavestone pathway<br>
-        <input type='checkbox' name='front_services' value='350'>Raised planting bed<br>
+        <input type='checkbox' name='services' value='100'>Regional evergreen plants<br>
+        <input type='checkbox' name='services' value='250'>Indigenous sapling tree<br>
+        <input type='checkbox' name='services' value='500'>Pavestone pathway<br>
+        <input type='checkbox' name='services' value='350'>Raised planting bed<br>
 
-        <br>
-        Front total: $<span id='front_output'></span>
+</td>
 
-        <br><br>
-        Back yard:<br> 
-        <select id='back_size'>
-                <option value='1'>Small (Less than .25 acres)</option>
-                <option value='2'>Medium (Between .25 and .5 acres)</option>
-                <option value='3'>Large (More than .5 acres)</option>
-        </select>
 
-        <br><br>
+
+<td>
+
         Lawn care:<br>
-        <input type='checkbox' name='back_services' value='15'>Grass mowed<br>
-        <input type='checkbox' name='back_services' value='30'>Tree trimming<br>
-        <input type='checkbox' name='back_services' value='100'>Seasonal floral plantings<br>
-        <input type='checkbox' name='back_services' value='50'>Seasonal weed removal<br>
+        <input type='checkbox' name='services' value='15'>Grass mowed<br>
+        <input type='checkbox' name='services' value='30'>Tree trimming<br>
+        <input type='checkbox' name='services' value='100'>Seasonal floral plantings<br>
+        <input type='checkbox' name='services' value='50'>Seasonal weed removal<br>
 
         <br>
         New installation:<br>
-        <input type='checkbox' name='back_services' value='100'>Regional evergreen plants<br>
-        <input type='checkbox' name='back_services' value='250'>Indigenous sapling tree<br>
-        <input type='checkbox' name='back_services' value='500'>Pavestone pathway<br>
-        <input type='checkbox' name='back_services' value='350'>Raised planting bed<br>
+        <input type='checkbox' name='services' value='100'>Regional evergreen plants<br>
+        <input type='checkbox' name='services' value='250'>Indigenous sapling tree<br>
+        <input type='checkbox' name='services' value='500'>Pavestone pathway<br>
+        <input type='checkbox' name='services' value='350'>Raised planting bed<br>
 
-        <br>
-        Back total: $<span id='back_output'></span>
+
+</td></tr>
+</table>
 
         <br><br>
         Total estimated cost: $<span id="total_output"></span>
+
+        <br><br>
+        Remaining budget: $<span id="remaining_budget"></span>
 
         <script src="js/landscape-calculator.js"></script>
 
