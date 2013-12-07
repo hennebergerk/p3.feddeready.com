@@ -1,4 +1,2 @@
-table.style {font-size:18px;color:#333333;width:50%;background-color:#bedda7;border-width: 1px;border-color: #729ea5;border-collapse: collapse;text-align:center;}
-.h1 {font-size:18px;color:#333333;text-align:center;}
-.body {font-size:18px;color:#333333;text-align:center;}
-.div {font-size:18px;color:#333333;text-align:center;}
+table.style {font-size:18px;color:#333333;width:100%;background-color:#bedda7;border-width: 1px;border-color: #729ea5;border-collapse: collapse;text-align:center;}
+body {font-size:18px;color:#333333;text-align:center;}
