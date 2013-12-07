@@ -1,5 +1,8 @@
+/*-------------------------------------------------------------------------------------------------
+Unhide the optional service checkboxes when "size" of property is selected
+-------------------------------------------------------------------------------------------------*/
 $(document).ready(function() {
-    var $aerialTr = $('#id_A').closest('tr').hide();
+    var $servicesTr = $('#id_A').closest('tr').hide();
 
 
     $('#id_size').change(function() {         
@@ -7,10 +10,10 @@ $(document).ready(function() {
         
         if(selectedValue  === 'A') {
 
-            $aerialTr.hide();
+            $servicesTr.hide();
 
         } else {
-            $aerialTr.show();
+            $servicesTr.show();
         }
     });
 });
