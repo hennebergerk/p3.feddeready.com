@@ -5,7 +5,7 @@ $('button').click(calculate);
 $('input,select').change(calculate);
 
 /*-------------------------------------------------------------------------------------------------
-Calculate the total estimated expenses & Calculate the remaining amount left in user's budget
+Calculate the "total" estimated expenses & Calculate the "remaining budget" available to the user
 -------------------------------------------------------------------------------------------------*/
 function calculate() {
     
@@ -24,8 +24,6 @@ function calculate() {
             total = total + amount;
             
     });
-    
-
 
     $('#total_output').html(total);
     
